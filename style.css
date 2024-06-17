@@ -1,0 +1,81 @@
+/* Base Styles */
+.main {
+    margin: 20px auto;
+    max-width: 750px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#instructionBtn {
+    margin: 15px 0;
+    text-align: center;
+}
+
+#instructions {
+    display: none;
+    text-align: justify;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#attempts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.attempts {
+    margin: 0;
+}
+
+#guessInput {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.lower-guess {
+    color: red;
+}
+
+.higher-guess {
+    color: blue;
+}
+
+.correct-guess {
+    color: green;
+}
+
+.wrong-guess {
+    color: red;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        max-width: 750px;
+        margin: 0;
+        padding: 10px;
+        border: none;
+        border-radius: 0;
+    }
+
+    #instructions {
+        margin: 5px 0;
+        padding: 8px;
+    }
+
+    #attempts {
+        gap: 5px;
+    }
+
+    #instructionBtn, #guessInput {
+        margin: 10px 0;
+    }
+}
