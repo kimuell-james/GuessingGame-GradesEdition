@@ -88,6 +88,8 @@ $(document).ready(function() {
         $('#result').text("Good Luck!");
         $('#guessInput').prop('disabled', false).val('');
         $('#guessBtn').prop('disabled', false);
+        $('#instructions').hide();
+        $('#instructionBtn').text("Show Instructions");
         $('#guessInput').focus();
     }
 
