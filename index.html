@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guessing Game</title>
@@ -8,16 +9,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="script.js"></script>
 </head>
+
 <body>
     <div class="main">
-        <h1>Guessing Game</h1>
-		<h5>(Grades Edition)</h5>
+        <h1>Guessing Game - with choco taps</h1>
+        <h5>(Grades Edition)</h5>
         <button id="instructionBtn">Show Instructions</button>
 
         <div id="instructions" style="display: none;">
-            Think of a subject/course and try to guess your grade. 
-            Enter your guess in the box then click the GUESS button. 
-            If you guess it within three attempts, that will be your grade (Passed). 
+            Think of a subject/course and try to guess your grade.
+            Enter your guess in the box then click the GUESS button.
+            If you guess it within three attempts, that will be your grade (Passed).
             However, if you haven't guessed the grade within three attempts, your grade will be 5.0 (Failed).
         </div>
 
@@ -29,7 +31,7 @@
         <div class="attempts-list">
             <p id="attempts" class="attempts">Attempts: </p>
         </div>
-        
+
         <input id="guessInput" type="text" />
 
         <button id="guessBtn">GUESS</button>
@@ -39,7 +41,8 @@
     </div>
 
     <!--Welcome Modal -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -49,7 +52,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Welcome to the Guessing Game - Grades Edition! Are you ready to test your luck and see if you can guess your grade and pass? Click the button below to start the game.
+                    Welcome to the Guessing Game - Grades Edition! Are you ready to test your luck and see if you can
+                    guess your grade and pass? Click the button below to start the game.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Start Game</button>
@@ -58,8 +62,9 @@
         </div>
     </div>
 
-	<!--New Game Modal -->
-	<div class="modal fade" id="newGameModal" tabindex="-1" role="dialog" aria-labelledby="newGameModal" aria-hidden="true">
+    <!--New Game Modal -->
+    <div class="modal fade" id="newGameModal" tabindex="-1" role="dialog" aria-labelledby="newGameModal"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -82,4 +87,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
