@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('#welcomeModal').modal('show');
 
     let grades = [1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00];
@@ -7,7 +7,7 @@ $(document).ready(function() {
     let attempts = 0;
     let maxAttempts = 3;
 
-    $('#guessBtn').click(function() {
+    $('#guessBtn').click(function () {
         attempts++;
 
         let guessInput = document.querySelector("#guessInput");
@@ -58,20 +58,17 @@ $(document).ready(function() {
         guessInput.focus();
     });
 
-    $('#instructionBtn').click(function() {
-        $('#instructions').toggle();
-        let text = $('#instructionBtn').text();
-        if (text === "Show Instructions") {
-            $('#instructionBtn').text("Hide Instructions");
-        } else {
-            $('#instructionBtn').text("Show Instructions");
-        }
-        $('#guessInput').focus();
+    $('#instructionBtn').click(function () {
+        $('#instructionModal').modal('show');
     });
 
-    $('#newGameModal #newGameBtn').click(function() {
+    $('#newGameModal #newGameBtn').click(function () {
         resetGame();
     });
+
+    function showInstructionModal() {
+        $('#instructionModal').modal('show');
+    }
 
     function showResultModal(title, message) {
         $('#newGameModalTitle').text(title);

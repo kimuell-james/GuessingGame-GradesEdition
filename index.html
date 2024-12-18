@@ -16,13 +16,6 @@
         <h5>(Grades Edition)</h5>
         <button id="instructionBtn">Show Instructions</button>
 
-        <div id="instructions" style="display: none;">
-            Think of a subject/course and try to guess your grade.
-            Enter your guess in the box then click the GUESS button.
-            If you guess it within three attempts, that will be your grade (Passed).
-            However, if you haven't guessed the grade within three attempts, your grade will be 5.0 (Failed).
-        </div>
-
         <p>Grades = [1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00]</p>
 
         <p>Guess your grade:</p>
@@ -40,13 +33,37 @@
 
     </div>
 
+    <!--Instruction Modal -->
+    <div class="modal fade" id="instructionModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="instructionModalLabel">Instructions</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Think of a subject/course and try to guess your grade.
+                    Enter your guess in the box then click the GUESS button.
+                    If you guess it within three attempts, that will be your grade (Passed).
+                    However, if you haven't guessed the grade within three attempts, your grade will be 5.0 (Failed).
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Welcome Modal -->
     <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="welcomeModalLabel">Welcome to the Guessing Game</h5>
+                    <h3 class="modal-title" id="welcomeModalLabel">Welcome to the Guessing Game</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -68,7 +85,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="newGameModalTitle">#</h5>
+                    <h3 class="modal-title" id="newGameModalTitle">#</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -78,7 +95,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="newGameBtn" data-dismiss="modal">New Game</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
                 </div>
             </div>
         </div>
