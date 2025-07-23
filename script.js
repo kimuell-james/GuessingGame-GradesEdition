@@ -7,11 +7,33 @@ $(document).ready(function () {
     let attempts = 0;
     let maxAttempts = 3;
 
+    // Disable guess input and button initially
+    $('#guessInput').prop('disabled', true);
+    $('#guessBtn').prop('disabled', true);
+
+    $('#subjectBtn').click(function () {
+        let subject = document.getElementById("subjectInput").value.trim();
+        let paragraph = document.getElementById("subjectParagraph");
+
+        if (subject === "") {
+            alert("Please enter a subject first.");
+            return;
+        }
+
+        paragraph.textContent = `Guess your grade in ${subject}:`;
+
+        // Enable guessing after subject is entered
+        $('#guessInput').prop('disabled', false);
+        $('#guessBtn').prop('disabled', false);
+        $('#guessInput').focus();
+    });
+
     $('#guessBtn').click(function () {
         attempts++;
 
         let guessInput = document.querySelector("#guessInput");
         let guess = parseFloat(guessInput.value);
+        let subject = document.getElementById("subjectInput").value;
 
         if (isNaN(guess) || !grades.includes(guess)) {
             $('#result').text("Try again. Enter a valid guess.");
@@ -28,7 +50,7 @@ $(document).ready(function () {
             guessInput.disabled = true;
             $('#guessBtn').prop('disabled', true);
             $('#result').text("Congratulations!");
-            showResultModal("Congratulations!", "You passed! Best of luck to your next semester.");
+            showResultModal("Congratulations!", `🎉 You passed in ${subject}! Best of luck to your next semester.`);
             return;
         } else {
             if (guess > grades[theGrade]) {
@@ -47,7 +69,7 @@ $(document).ready(function () {
         if (attempts >= maxAttempts) {
             if (guess !== grades[theGrade]) {
                 $('#grade').addClass('wrong-guess').text(grades[theGrade]);
-                showResultModal("Game Over!", "Unfortunately, you failed. See you next semester.");
+                showResultModal("Game Over!", `😭 Unfortunately, you failed in ${subject}. See you next semester.`);
             }
             $('#result').text("Game Over!");
             guessInput.disabled = true;
@@ -80,14 +102,15 @@ $(document).ready(function () {
         attempts = 0;
         theGrade = Math.floor(Math.random() * grades.length);
         document.getElementById("grade").innerHTML = '#';
+        $('#subjectInput').focus().val('');
+        $('#subjectParagraph').text("Guess your grade:");
         $('#grade').removeClass('correct-guess wrong-guess');
         $('#attempts').find('.attempt').remove();
         $('#result').text("Good Luck!");
-        $('#guessInput').prop('disabled', false).val('');
-        $('#guessBtn').prop('disabled', false);
+        $('#guessInput').prop('disabled', true).val('');
+        $('#guessBtn').prop('disabled', true);
         $('#instructions').hide();
         $('#instructionBtn').text("Show Instructions");
-        $('#guessInput').focus();
     }
 
     $('#welcomeModal').on('hidden.bs.modal', function () {

@@ -13,12 +13,20 @@
 <body>
     <div class="main">
         <h1>Guessing Game</h1>
-        <h5>(Grades Edition)</h5>
+        <h3>(Grades Edition)</h3>
         <button id="instructionBtn">Show Instructions</button>
+
+        <div class="wrapper">
+            <div class="subject">
+                <p id="subjectLabel" class="subjectLabel">Subject: </p>
+                <input id="subjectInput" type="text" placeholder="Enter subject" />
+                <button id="subjectBtn">✓</button>
+            </div>
+        </div>
 
         <p>Grades = [1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00]</p>
 
-        <p>Guess your grade:</p>
+        <p id="subjectParagraph">Guess your grade:</p>
         <h2 id="grade">#</h2>
 
         <div class="attempts-list">
@@ -30,6 +38,8 @@
         <button id="guessBtn">GUESS</button>
 
         <p id="result">Good Luck!</p>
+
+        <h6>&lt;/Kode by Kim&gt;</h6>
 
     </div>
 
@@ -45,11 +55,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Think of a subject/course and try to guess your grade.
-                    Enter your guess in the box then click the GUESS button.
-                    If you guess it within three attempts, that will be your grade (Passed).
-                    However, if you haven't guessed the grade within three attempts, your grade will be 5.0 (Failed).
+                    <p>Enter the subject or course name, then try to guess your grade.</p>
+                    <p>Type your guess in the input box and click the <strong>GUESS</strong> button.</p>
+                    <p>You have <strong>three attempts</strong> to guess the correct grade.</p>
+                    <ul>
+                        <li>✅ If you guess it correctly within three tries, that will be your grade — <strong>you
+                                passed!</strong></li>
+                        <li>❌ If not, your grade will be <strong>5.0</strong> — <strong>you failed.</strong></li>
+                    </ul>
+                    <p><strong>Good luck!</strong></p>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
                 </div>

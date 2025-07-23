@@ -53,7 +53,37 @@ button:active,
 
 #instructionBtn {
     margin: 10px;
+    font-size: 16px;
 }
+
+.subject {
+    display: flex;
+    justify-content: center;
+    /* Horizontal center */
+    align-items: center;
+    /* Vertical center */
+    gap: 10px;
+    height: 100px;
+}
+
+.subjectLabel {
+    margin: 0;
+    /* Remove default margin of <p> */
+    line-height: 1;
+    /* Optional for better alignment */
+}
+
+#subjectInput {
+    margin: 15px 0;
+    text-align: center;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #155a31 !important;
+    border: 2px solid #915a03 !important;
+    color: #ffffff;
+    padding: 5px 20px;
+}
+
 
 #attempts {
     display: flex;
