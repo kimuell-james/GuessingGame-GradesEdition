@@ -11,17 +11,19 @@ body {
     border: 5px solid #c17d11;
     background-color: #3a8f5a !important;
     color: #ffffff;
+    font-size: 16px;
 }
 
 .main,
 .modal {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .main {
     margin: 50px auto;
-    width: 750px;
+    max-width: 750px;
+    width: 90%;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -35,8 +37,10 @@ button,
     background-color: #06712e;
     border: 2px solid #c17d11;
     border-radius: 5px !important;
-    padding: 5px 20px;
+    padding: 5px 10px;
     color: #ffffff;
+    font-size: 1rem;
+    width: auto;
 }
 
 button:hover,
@@ -53,37 +57,40 @@ button:active,
 
 #instructionBtn {
     margin: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .subject {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    /* Horizontal center */
     align-items: center;
-    /* Vertical center */
     gap: 10px;
-    height: 100px;
+    min-height: 60px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .subjectLabel {
     margin: 0;
-    /* Remove default margin of <p> */
-    line-height: 1;
-    /* Optional for better alignment */
+    line-height: 1.2;
 }
 
-#subjectInput {
-    margin: 15px 0;
+#subjectInput,
+#guessInput {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
     text-align: center;
     outline: none !important;
     box-shadow: none !important;
     background-color: #155a31 !important;
     border: 2px solid #915a03 !important;
     color: #ffffff;
-    padding: 5px 20px;
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    border-radius: 5px;
 }
-
 
 #attempts {
     display: flex;
@@ -95,17 +102,6 @@ button:active,
 
 .attempts {
     margin: 0;
-}
-
-#guessInput {
-    margin: 15px 0;
-    text-align: center;
-    outline: none !important;
-    box-shadow: none !important;
-    background-color: #155a31 !important;
-    border: 2px solid #915a03 !important;
-    color: #ffffff;
-    padding: 5px 20px;
 }
 
 .lower-guess {
@@ -124,44 +120,15 @@ button:active,
     color: red;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-
-    .main,
-    .modal {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 18px;
-    }
-
-    .main {
-        max-width: 750px;
-        margin: 0;
-        padding: 10px;
-        border: none;
-        border-radius: 0;
-    }
-
-    #instructions {
-        margin: 5px 0;
-        padding: 8px;
-    }
-
-    #attempts {
-        gap: 5px;
-    }
-
-    #instructionBtn,
-    #guessInput {
-        margin: 10px 0;
-    }
-}
-
 /* Modal */
 .modal-dialog {
     background-color: #3a8f5a;
     border: 5px solid #c17d11;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 90%;
+    margin: auto;
 }
 
 .modal-header,
@@ -172,4 +139,53 @@ button:active,
 
 .close span {
     color: #ff0000;
+    font-size: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        font-size: 14px;
+        flex-direction: column;
+    }
+
+    .main,
+    .modal {
+        font-size: 1rem;
+        padding: 15px;
+        margin: 0;
+        width: 95%;
+        border: none;
+        border-radius: 0;
+    }
+
+    .subject {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #instructionBtn,
+    button {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1rem;
+    }
+
+    #attempts {
+        gap: 6px;
+    }
+
+    #subjectInput,
+    #guessInput {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .modal-dialog {
+        width: 90%;
+        font-size: 1rem;
+    }
 }

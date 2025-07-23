@@ -14,10 +14,14 @@ $(document).ready(function () {
     $('#subjectBtn').click(function () {
         let subject = document.getElementById("subjectInput").value.trim();
         let paragraph = document.getElementById("subjectParagraph");
+        let subjectError = document.getElementById("subjectError").value;
 
         if (subject === "") {
-            alert("Please enter a subject first.");
+            // alert("Please enter a subject first.");
+            $('#subjectError').text("Try again. Enter a valid Subject.");
             return;
+        } else {
+            $('#subjectError').text("");
         }
 
         paragraph.textContent = `Guess your grade in ${subject}:`;
